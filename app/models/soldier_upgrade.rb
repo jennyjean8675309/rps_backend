@@ -1,3 +1,3 @@
 class SoldierUpgrade < ApplicationRecord
-  belongs_to :solider_type
+  belongs_to :soldier_type
 end
