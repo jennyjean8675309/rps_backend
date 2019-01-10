@@ -15,5 +15,6 @@ class Api::V1::AuthController < ApplicationController
         error: true
       },
       status: :unauthorized
+    end
   end
 end
