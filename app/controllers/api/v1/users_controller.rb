@@ -19,14 +19,14 @@ class Api::V1::UsersController < ApplicationController
     if @user.valid?
       render json: { user: UserSerializer.new(@user) }, status: :created
     else
-      render json: { error: 'failed to create user'}, status: :not_acceptable
+      render json: { error: 'This username has already been taken and/or you did not submit a password'}, status: :not_acceptable
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :high_score)
+    params.require(:user).permit(:username, :password, :high_score, :wins, :losses, :latest_stat, :consecutive_wins, :highest_consecutive_wins)
   end
 
 end
