@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   def secret_key
-    'j3enenwhy'
+    ENV['SECRET_KEY']
   end
 
   #given a payload, returns a token
